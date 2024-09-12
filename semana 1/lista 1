@@ -1,0 +1,56 @@
+Arquitetura e Organização de Computadores - Lista de Exercícios 1
+
+Calcule e mostre o valor decimal de cada um dos números binários de 8 bits da lista a seguir. Mostre os passos utilizados para o cálculo.
+
+o) 00101000 em complemento de 2 p) 01101111 em excesso 127 q) 10010101 sem sinal
+
+Respostas:
+
+o) 00101000 em complemento de 2:
+
+$0 × (-27) + 0 × 26 + 1 × 25 + 0 × 24 + 1 × 23 + 0 × 22 + 0 × 21 + 0 × 20 = 32 + 8 = \textbf{40}$.
+
+p) 01101111 em excesso 127
+
+$0 × 27 + 1 × 26 + 1 × 25 + 0 × 24 + 1 × 23 + 1 × 22 + 1 × 21 + 1 × 20 = 64 + 32 + 8 + 4 + 2 + 1 = 101$
+
+como o valor está em excesso 127, devemos subtrair 127 (lembrando que para converter base 
+10 para binário devemos somar 127, portanto para a operação inversa, devemos subtrair):
+
+101 − 127 = -16.
+
+q) 10010101 sem sinal:
+
+$1 × 27 + 0 × 26 + 0 × 25 + 1 × 24 + 0 × 23 + 1 × 22 + 0 × 21 + 1 × 20 = 128 + 16 + 4 + 1 = \textbf{149}$
+
+Efetue as seguintes conversões de base:
+
+i) $3546$ = $?10$ p) $23710 = ?2$ q) $101011012 = ?16$
+
+Respostas:
+
+i) $3546$ = $?10$:
+$3 × 62 + 5 × 61 + 5 × 60 = 3 × 36 + 5 × 6 + 4 × 1 = 108 + 30 + 4 = \textbf{142}$
+p) $23710 = ?2$:
+
+237/2 = 118 → resto1
+
+118/2 = 59 → resto1
+
+59/2 = 29 → resto1
+
+29/2 = 14 → resto1
+
+14/2 = 7 → resto0
+
+7/2 = 3 → resto1
+
+3/2 = 1 → resto1
+
+1/2 = 0 → resto1
+
+11101101
+
+q) $101011012 = ?16$:
+
+1010110 = AD = AD
