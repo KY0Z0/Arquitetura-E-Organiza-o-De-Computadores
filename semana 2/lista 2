@@ -1,0 +1,204 @@
+Arquitetura e Organização de Computadores - Lista de Exercícios 2
+
+Converta os seguintes números para o formato IEEE 754 de precisão simples, mostrando os passos utilizados para a conversão e apresentando o resultado final em hexadecimal.
+
+b) 128.75 e) −194.875
+
+Respostas:
+
+b) 128.75
+
+Convertendo a parte inteira:
+
+128/2 = 64 → resto0
+
+64/2 = 32 → resto0
+
+32/2 = 16 → resto0
+
+16/2 = 8 → resto0
+
+8/2 = 4 → resto0
+
+4/2= 2 → resto0
+
+2/2 = 1 → resto0
+
+1/2 = 0 → resto1
+
+Convertendo a parte decimal:
+
+0.75 × 2 = 1.5 → guarda1
+
+0.5 × 2 = 1.0 → guarda1
+
+128.75 em binário: 10000000.11
+
+Movendo o ponto para chegar no significando e obter o expoente:
+
+$10000000.11 → 1.000000011 × 27 → expoente 7$
+
+Montando a mantissa:
+
+00000001100000000000000
+
+Codificando o expoente em excesso 
+127
+:
+
+$7 + 127 = 134_ {(10)} → 10000110(2)$
+
+Codificando o sinal:
+
+Número positivo → 0
+
+Portanto, 128.75 em formato IEEE 754 é 01000011000000001100000000000000
+
+Em hexadecimal: 4300C000
+
+e) −194.875
+
+Convertendo a parte inteira:
+
+194/2 = 97 → resto0
+
+97/2 = 48 → resto1
+
+48/2 = 24 → resto0
+
+24/2 = 12 → resto0
+
+12/2 = 6 → resto0
+
+6/2 = 3 → resto0
+
+3/2 = 1 → resto1
+
+1/2 = 0 → resto1
+
+Convertendo a parte decimal:
+
+0.875 × 2 = 1.75 → guarda1
+
+0.75 × 2 = 1.5 → guarda1
+
+0.5 × 2 = 1.0 → guarda1
+
+194.875 em binário: 11000010.111
+
+Movendo o ponto para chegar no significando e obter o expoente:
+
+$11000010.111 → 1.1000010111 × 27 → expoente 7$
+
+Montando a Mantissa:
+
+10000101110000000000000
+
+Codificando o expoente em excesso 127:$7 + 127 = 134(10) → 10000110(2)$
+
+Codificando o sinal:
+
+Número negativo: →1
+
+Portanto, −194.875 em formato IEEE 754 é 11000011010000101110000000000000
+
+Em hexadecimal: C342E000
+
+Converta os seguintes números do formato IEEE 754 de precisão simples, apresentados na forma hexadecimal, para o seu valor decimal, mostrando os passos utilizados para a conversão.
+b) 3F600000 d) 45827A00
+
+Respostas:
+b) 3F600000
+
+Em binário: 
+3F600000 → 00111111011000000000000000000000
+
+Semparando as partes:
+
+0 01111110 11000000000000000000000
+
+Temos que o número em questão é positivo.
+
+Calculando o expoente:
+
+$01111110 = 0 × 27 + 1 × 26 + 1 × 25 + 1 × 24 + 1 × 23 + 1 × 22 + 1 × 21 + 0 × 20 = 0 + 64 + 32 + 16 + 8 + 4 + 2 + 0 = 126$
+
+126−127=−1
+
+Decodificando o valor:
+
+$1.11000000000000000000000 × 2-1 = 0.111$
+
+1/2+1/4+1/8=0.5+0.25+0.125=0.875
+
+Portanto, 3F600000 em decimal será: +0.875
+
+d) 45827A00
+
+Em binário: 
+45827A00 → 01000101100000100111101000000000
+
+Separando em partes:
+ 
+0 10001011 00000100111101000000000 
+
+Temos que o número em questão é positivo.
+
+Calculando o expoente:
+$10001011 = 1 × 27 + 0 × 26 + 0 × 25 + 0 × 24 + 1 × 23 + 0 × 22 + 1 × 21 + 1 × 20 = 128 + 0 + 0 + 0 + 8 + 0 + 2 + 1 = 139$
+
+139 − 127 = 12
+
+Decodificando o valor:
+$1.00000100111101000000000 × 212 = 1000001001111.01$
+
+Parte inteira:
+$1 × 212 + 0 × 211 + 0 × 210 + 0 × 29 + 0 × 28 + 0 × 27 + 1 × 26 + 0 × 25 + 0 × 24 + 1 × 23 + 1 × 22 + 1 × 21 + 1 × 20 = 4096 + 64 + 8 + 4 + 2 + 1 = 4175$
+
+Parte decimal:
+0×(12)+1×(14)=0.25
+
+Portanto, 45827A00 em decimal será: +4175.25
+
+Simplifique, se possível, as funções booleanas a seguir. Utilize álgebra booleana ou, alternativamente, mapas de Karnaugh, mostrando os passos utilizados para a simplificação
+f) S=A′.B′.C′+A′.B.C+A′.B.C′+A.B′.C′+A.B.C′
+
+Resposta:
+f) S=A′.B′.C′+A′.B.C+A′.B.C′+A.B′.C′+A.B.C′
+
+Distributiva ao contrário:
+S=A′.B′.C′+A′.B.(C+C′)+A.B′.C′+A.B.C′
+
+Lei do inverso:
+S=A′.B′.C′+A′.B.1+A.B′.C+A.B.C′
+
+Lei da identidade:
+S=A′.B′.C′+A′.B+A.B′.C+A.B.C′
+
+Distributiva ao contrário:
+S=A′.(B′.C′+B)+A.B′.C+A.B.C′
+
+Distributiva do OR:
+S=A′.((B′+B).(B+C′))+A.B′.C+A.B.C′
+
+Lei do inverso:
+S=A′.1.(B+C′)+A.B′.C+A.B.C′
+
+Lei da identidade e distributiva: 
+S=A′.B+A′.C′+A.B′.C+A.B.C′
+
+Distributiva ao contrário: 
+S=A′.B+A.B′.C+(A′+A.B).C′
+
+Distributiva do OR: 
+S=A′.B+A.B′.C+((A′+A).(A′+B)).C′
+
+Lei do inverso: 
+S=A′.B+A.B′.C+(1.(A′+B)).C′
+
+Lei da Identidade: 
+S=A′.B+A.B′.C+A′C′+B.C′
+
+Assim, a versão simplificada de S=A′.B′.C′+A′.B.C+A′.B.C′+A.B′.C′+A.B.C′ pode ser escrita como:
+
+S = A’.B + A.B’.C + A’C’ + B.C’
